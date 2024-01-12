@@ -38,6 +38,7 @@
             usersToolStripMenuItem = new ToolStripMenuItem();
             rolesToolStripMenuItem = new ToolStripMenuItem();
             linkLabel1 = new LinkLabel();
+            salesToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -95,7 +96,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, rolesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, rolesToolStripMenuItem, salesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -129,6 +130,13 @@
             linkLabel1.Text = "Toolstrip icons by Icons8";
             linkLabel1.UseCompatibleTextRendering = true;
             // 
+            // salesToolStripMenuItem
+            // 
+            salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            salesToolStripMenuItem.Size = new Size(57, 24);
+            salesToolStripMenuItem.Text = "&Sales";
+            salesToolStripMenuItem.Click += salesToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -160,5 +168,6 @@
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem rolesToolStripMenuItem;
         private LinkLabel linkLabel1;
+        private ToolStripMenuItem salesToolStripMenuItem;
     }
 }

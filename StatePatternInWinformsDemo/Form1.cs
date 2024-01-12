@@ -7,6 +7,7 @@ namespace StatePatternDemo
         private IUIState _currentUIState;
         private IUIState _usersState = new UsersState();
         private IUIState _rolesState = new RolesState();
+        private IUIState _salesState = new SalesState();
 
         public Form1()
         {
@@ -51,6 +52,12 @@ namespace StatePatternDemo
         {
             this.Text = _currentUIState.Caption;
             _currentUIState.ListEntities();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _currentUIState = _salesState;
+            ListEntities();
         }
     }
 }
