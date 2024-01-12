@@ -37,8 +37,8 @@
             menuStrip1 = new MenuStrip();
             usersToolStripMenuItem = new ToolStripMenuItem();
             rolesToolStripMenuItem = new ToolStripMenuItem();
-            linkLabel1 = new LinkLabel();
             salesToolStripMenuItem = new ToolStripMenuItem();
+            linkLabel1 = new LinkLabel();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -117,6 +117,13 @@
             rolesToolStripMenuItem.Text = "&Roles";
             rolesToolStripMenuItem.Click += rolesToolStripMenuItem_Click;
             // 
+            // salesToolStripMenuItem
+            // 
+            salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            salesToolStripMenuItem.Size = new Size(57, 24);
+            salesToolStripMenuItem.Text = "&Sales";
+            salesToolStripMenuItem.Click += salesToolStripMenuItem_Click;
+            // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
@@ -129,13 +136,7 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Toolstrip icons by Icons8";
             linkLabel1.UseCompatibleTextRendering = true;
-            // 
-            // salesToolStripMenuItem
-            // 
-            salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            salesToolStripMenuItem.Size = new Size(57, 24);
-            salesToolStripMenuItem.Text = "&Sales";
-            salesToolStripMenuItem.Click += salesToolStripMenuItem_Click;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // Form1
             // 

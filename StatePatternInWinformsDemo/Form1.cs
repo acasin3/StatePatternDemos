@@ -59,5 +59,11 @@ namespace StatePatternDemo
             _currentUIState = _salesState;
             ListEntities();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("explorer.exe", "https://icons8.com/");
+        }
     }
 }
