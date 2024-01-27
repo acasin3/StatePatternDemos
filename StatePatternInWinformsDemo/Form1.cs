@@ -8,10 +8,22 @@ namespace StatePatternDemo
         private IUIState _usersState = new UsersState();
         private IUIState _rolesState = new RolesState();
         private IUIState _salesState = new SalesState();
+        private IUIState _purchasesState = new PurchasesState();
 
         public Form1()
         {
             InitializeComponent();
+            tscboYear.SelectedIndex = 0;
+
+            _usersState.ToolStripYearLabel = this.tslblYear;
+            _usersState.ToolStripYearComboBox = this.tscboYear;
+            _rolesState.ToolStripYearLabel = this.tslblYear;
+            _rolesState.ToolStripYearComboBox = this.tscboYear;
+            _salesState.ToolStripYearLabel = this.tslblYear;
+            _salesState.ToolStripYearComboBox = this.tscboYear;
+            _purchasesState.ToolStripYearLabel = this.tslblYear;
+            _purchasesState.ToolStripYearComboBox = this.tscboYear;
+
             _currentUIState = _usersState;
             ListEntities();
         }
@@ -56,8 +68,29 @@ namespace StatePatternDemo
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            UnsubscribeFromComboBoxEvent();
             _currentUIState = _salesState;
             ListEntities();
+        }
+        private void purchasesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UnsubscribeFromComboBoxEvent();
+            _currentUIState = _purchasesState;
+            ListEntities();
+        }
+
+        private void UnsubscribeFromComboBoxEvent()
+        {
+            // Remove the event handler before switching state
+            // Refactor to use the Strategy design pattern to adhere to the Open-Closed principle
+            if (_currentUIState is SalesState)
+            {
+                tscboYear.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboYear_SelectedIndexChanged;
+            }
+            else if (_currentUIState is PurchasesState)
+            {
+                tscboYear.SelectedIndexChanged -= ((PurchasesState)_currentUIState).tscboYear_SelectedIndexChanged;
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -34,10 +34,13 @@
             editToolStripButton = new ToolStripButton();
             deleteToolStripButton = new ToolStripButton();
             printToolStripButton = new ToolStripButton();
+            tslblYear = new ToolStripLabel();
+            tscboYear = new ToolStripComboBox();
             menuStrip1 = new MenuStrip();
             usersToolStripMenuItem = new ToolStripMenuItem();
             rolesToolStripMenuItem = new ToolStripMenuItem();
             salesToolStripMenuItem = new ToolStripMenuItem();
+            purchasesToolStripMenuItem = new ToolStripMenuItem();
             linkLabel1 = new LinkLabel();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -46,10 +49,10 @@
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, editToolStripButton, deleteToolStripButton, printToolStripButton });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, editToolStripButton, deleteToolStripButton, printToolStripButton, tslblYear, tscboYear });
             toolStrip1.Location = new Point(0, 28);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 27);
+            toolStrip1.Size = new Size(1044, 28);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -59,7 +62,7 @@
             newToolStripButton.Image = (Image)resources.GetObject("newToolStripButton.Image");
             newToolStripButton.ImageTransparentColor = Color.Magenta;
             newToolStripButton.Name = "newToolStripButton";
-            newToolStripButton.Size = new Size(29, 24);
+            newToolStripButton.Size = new Size(29, 25);
             newToolStripButton.Text = "&New";
             newToolStripButton.Click += newToolStripButton_Click;
             // 
@@ -69,7 +72,7 @@
             editToolStripButton.Image = (Image)resources.GetObject("editToolStripButton.Image");
             editToolStripButton.ImageTransparentColor = Color.Magenta;
             editToolStripButton.Name = "editToolStripButton";
-            editToolStripButton.Size = new Size(29, 24);
+            editToolStripButton.Size = new Size(29, 25);
             editToolStripButton.Text = "&Edit";
             editToolStripButton.Click += editToolStripButton_Click;
             // 
@@ -79,7 +82,7 @@
             deleteToolStripButton.Image = (Image)resources.GetObject("deleteToolStripButton.Image");
             deleteToolStripButton.ImageTransparentColor = Color.Magenta;
             deleteToolStripButton.Name = "deleteToolStripButton";
-            deleteToolStripButton.Size = new Size(29, 24);
+            deleteToolStripButton.Size = new Size(29, 25);
             deleteToolStripButton.Text = "&Delete";
             deleteToolStripButton.Click += deleteToolStripButton_Click;
             // 
@@ -89,17 +92,32 @@
             printToolStripButton.Image = (Image)resources.GetObject("printToolStripButton.Image");
             printToolStripButton.ImageTransparentColor = Color.Magenta;
             printToolStripButton.Name = "printToolStripButton";
-            printToolStripButton.Size = new Size(29, 24);
+            printToolStripButton.Size = new Size(29, 25);
             printToolStripButton.Text = "&Print";
             printToolStripButton.Click += printToolStripButton_Click;
+            // 
+            // tslblYear
+            // 
+            tslblYear.Name = "tslblYear";
+            tslblYear.Padding = new Padding(100, 0, 0, 0);
+            tslblYear.Size = new Size(137, 25);
+            tslblYear.Text = "Year";
+            tslblYear.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // tscboYear
+            // 
+            tscboYear.DropDownStyle = ComboBoxStyle.DropDownList;
+            tscboYear.Items.AddRange(new object[] { "2024", "2023", "2022" });
+            tscboYear.Name = "tscboYear";
+            tscboYear.Size = new Size(80, 28);
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, rolesToolStripMenuItem, salesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, rolesToolStripMenuItem, salesToolStripMenuItem, purchasesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(1044, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -124,12 +142,20 @@
             salesToolStripMenuItem.Text = "&Sales";
             salesToolStripMenuItem.Click += salesToolStripMenuItem_Click;
             // 
+            // purchasesToolStripMenuItem
+            // 
+            purchasesToolStripMenuItem.Name = "purchasesToolStripMenuItem";
+            purchasesToolStripMenuItem.Size = new Size(87, 24);
+            purchasesToolStripMenuItem.Text = "&Purchases";
+            purchasesToolStripMenuItem.Click += purchasesToolStripMenuItem_Click;
+            // 
             // linkLabel1
             // 
+            linkLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.LinkArea = new LinkArea(19, 15);
-            linkLabel1.Location = new Point(285, 209);
+            linkLabel1.Location = new Point(407, 286);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(230, 33);
             linkLabel1.TabIndex = 2;
@@ -142,7 +168,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1044, 605);
             Controls.Add(linkLabel1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
@@ -150,6 +176,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             menuStrip1.ResumeLayout(false);
@@ -168,7 +195,10 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem rolesToolStripMenuItem;
-        private LinkLabel linkLabel1;
         private ToolStripMenuItem salesToolStripMenuItem;
+        private ToolStripMenuItem purchasesToolStripMenuItem;
+        private LinkLabel linkLabel1;
+        private ToolStripLabel tslblYear;
+        private ToolStripComboBox tscboYear;
     }
 }

@@ -3,9 +3,37 @@
     internal class UsersState : IUIState
     {
         public string Caption => "Users";
+        public ToolStripLabel _toolStripYearLabel = new ToolStripLabel();
+        public ToolStripComboBox _toolStripYearComboBox = new ToolStripComboBox();
+
+        public ToolStripLabel ToolStripYearLabel
+        {
+            get
+            {
+                return _toolStripYearLabel;
+            }
+            set
+            {
+                _toolStripYearLabel = value;
+            }
+        }
+
+        public ToolStripComboBox ToolStripYearComboBox
+        {
+            get
+            {
+                return _toolStripYearComboBox;
+            }
+            set
+            {
+                _toolStripYearComboBox = value;
+            }
+        }
 
         public void ListEntities()
         {
+            _toolStripYearLabel.Visible = false;
+            _toolStripYearComboBox.Visible = false;
             MessageBox.Show("Code to list users goes here.");
         }
 

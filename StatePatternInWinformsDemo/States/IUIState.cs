@@ -4,6 +4,8 @@
     {
         string Caption { get; }
 
+        ToolStripLabel ToolStripYearLabel { get; set; }
+        ToolStripComboBox ToolStripYearComboBox { get; set; }
         void ListEntities();
 
         void Add();
