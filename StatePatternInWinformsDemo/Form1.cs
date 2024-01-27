@@ -1,4 +1,5 @@
 using System.Security.Principal;
+using static System.Windows.Forms.AxHost;
 
 namespace StatePatternDemo
 {
@@ -68,21 +69,20 @@ namespace StatePatternDemo
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnsubscribeFromComboBoxEvent();
+            UnsubscribeFromUIEvents();
             _currentUIState = _salesState;
             ListEntities();
         }
         private void purchasesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnsubscribeFromComboBoxEvent();
+            UnsubscribeFromUIEvents();
             _currentUIState = _purchasesState;
             ListEntities();
         }
 
-        private void UnsubscribeFromComboBoxEvent()
+        private void UnsubscribeFromUIEvents()
         {
             // Remove the event handler before switching state
-            // Refactor to use the Strategy design pattern to adhere to the Open-Closed principle
             if (_currentUIState is SalesState)
             {
                 tscboYear.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboYear_SelectedIndexChanged;
