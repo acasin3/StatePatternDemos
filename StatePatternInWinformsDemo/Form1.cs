@@ -14,24 +14,33 @@ namespace StatePatternDemo
         public Form1()
         {
             InitializeComponent();
+            tscboTaxpayerID.SelectedIndex = 0;
             tscboYear.SelectedIndex = 0;
             tscboAmendmentNo.SelectedIndex = 0;
 
+            _usersState.ToolStripTaxpayerIDLabel = this.tslblTaxpayerID;
+            _usersState.ToolStripTaxpayerIDComboBox = this.tscboTaxpayerID;
             _usersState.ToolStripYearLabel = this.tslblYear;
             _usersState.ToolStripYearComboBox = this.tscboYear;
             _usersState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
             _usersState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
 
+            _rolesState.ToolStripTaxpayerIDLabel = this.tslblTaxpayerID;
+            _rolesState.ToolStripTaxpayerIDComboBox = this.tscboTaxpayerID;
             _rolesState.ToolStripYearLabel = this.tslblYear;
             _rolesState.ToolStripYearComboBox = this.tscboYear;
             _rolesState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
             _rolesState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
 
+            _salesState.ToolStripTaxpayerIDLabel = this.tslblTaxpayerID;
+            _salesState.ToolStripTaxpayerIDComboBox = this.tscboTaxpayerID;
             _salesState.ToolStripYearLabel = this.tslblYear;
             _salesState.ToolStripYearComboBox = this.tscboYear;
             _salesState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
             _salesState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
 
+            _purchasesState.ToolStripTaxpayerIDLabel = this.tslblTaxpayerID;
+            _purchasesState.ToolStripTaxpayerIDComboBox = this.tscboTaxpayerID;
             _purchasesState.ToolStripYearLabel = this.tslblYear;
             _purchasesState.ToolStripYearComboBox = this.tscboYear;
             _purchasesState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
@@ -97,11 +106,13 @@ namespace StatePatternDemo
             // Remove the event handler before switching state
             if (_currentUIState is SalesState)
             {
+                tscboTaxpayerID.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboTaxpayerID_SelectedIndexChanged;
                 tscboYear.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboYear_SelectedIndexChanged;
                 tscboAmendmentNo.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboAmendmentNo_SelectedIndexChanged;
             }
             else if (_currentUIState is PurchasesState)
             {
+                tscboTaxpayerID.SelectedIndexChanged -= ((PurchasesState)_currentUIState).tscboTaxpayerID_SelectedIndexChanged;
                 tscboYear.SelectedIndexChanged -= ((PurchasesState)_currentUIState).tscboYear_SelectedIndexChanged;
                 tscboAmendmentNo.SelectedIndexChanged -= ((PurchasesState)_currentUIState).tscboAmendmentNo_SelectedIndexChanged;
             }

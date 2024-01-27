@@ -3,10 +3,24 @@
     internal class PurchasesState : IUIState
     {
         public string Caption => "Purchases";
+        public ToolStripLabel _toolStripTaxpayerIDLabel = new ToolStripLabel();
+        public ToolStripComboBox _toolStripTaxpayerIDComboBox = new ToolStripComboBox();
         public ToolStripLabel _toolStripYearLabel = new ToolStripLabel();
         public ToolStripComboBox _toolStripYearComboBox = new ToolStripComboBox();
         public ToolStripLabel _toolStripAmendmentNoLabel = new ToolStripLabel();
         public ToolStripComboBox _toolStripAmendmentNoComboBox = new ToolStripComboBox();
+
+        public ToolStripLabel ToolStripTaxpayerIDLabel
+        {
+            get => _toolStripTaxpayerIDLabel;
+            set => _toolStripTaxpayerIDLabel = value;
+        }
+
+        public ToolStripComboBox ToolStripTaxpayerIDComboBox
+        {
+            get => _toolStripTaxpayerIDComboBox;
+            set => _toolStripTaxpayerIDComboBox = value;
+        }
 
         public ToolStripLabel ToolStripYearLabel
         {
@@ -34,26 +48,19 @@
 
         public ToolStripLabel ToolStripAmendmentNoLabel
         {
-            get
-            {
-                return _toolStripAmendmentNoLabel;
-            }
-            set
-            {
-                _toolStripAmendmentNoLabel = value;
-            }
+            get => _toolStripAmendmentNoLabel;
+            set => _toolStripAmendmentNoLabel = value;
         }
 
         public ToolStripComboBox ToolStripAmendmentNoComboBox
         {
-            get
-            {
-                return _toolStripAmendmentNoComboBox;
-            }
-            set
-            {
-                _toolStripAmendmentNoComboBox = value;
-            }
+            get => _toolStripAmendmentNoComboBox;
+            set => _toolStripAmendmentNoComboBox = value;
+        }
+
+        public void tscboTaxpayerID_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            UpdateList();
         }
 
         public void tscboYear_SelectedIndexChanged(object? sender, EventArgs e)
@@ -68,8 +75,11 @@
 
         public void ListEntities()
         {
+            _toolStripTaxpayerIDComboBox.SelectedIndexChanged += tscboTaxpayerID_SelectedIndexChanged;
             _toolStripYearComboBox.SelectedIndexChanged += tscboYear_SelectedIndexChanged;
             _toolStripAmendmentNoComboBox.SelectedIndexChanged += tscboAmendmentNo_SelectedIndexChanged;
+            _toolStripTaxpayerIDLabel.Visible = true;
+            _toolStripTaxpayerIDComboBox.Visible = true;
             _toolStripYearLabel.Visible = true;
             _toolStripYearComboBox.Visible = true;
             _toolStripAmendmentNoLabel.Visible = true;
@@ -79,9 +89,10 @@
 
         private void UpdateList()
         {
+            string strTaxpayer = _toolStripTaxpayerIDComboBox.Text;
             string strYear = _toolStripYearComboBox.Text.ToString();
             string strAmendmentNo = _toolStripAmendmentNoComboBox.Text.ToString();
-            MessageBox.Show(String.Format("Code to list {0} purchases amendment {1} goes here.", strYear, strAmendmentNo));
+            MessageBox.Show(String.Format("Code to list {0}'s {1} amendment {2} purchases goes here.", strTaxpayer, strYear, strAmendmentNo));
         }
 
         public void Add()

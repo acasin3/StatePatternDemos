@@ -3,10 +3,24 @@
     internal class UsersState : IUIState
     {
         public string Caption => "Users";
+        public ToolStripLabel _toolStripTaxpayerIDLabel = new ToolStripLabel();
+        public ToolStripComboBox _toolStripTaxpayerIDComboBox = new ToolStripComboBox();
         public ToolStripLabel _toolStripYearLabel = new ToolStripLabel();
         public ToolStripComboBox _toolStripYearComboBox = new ToolStripComboBox();
         public ToolStripLabel _toolStripAmendmentNoLabel = new ToolStripLabel();
         public ToolStripComboBox _toolStripAmendmentNoComboBox = new ToolStripComboBox();
+
+        public ToolStripLabel ToolStripTaxpayerIDLabel
+        {
+            get => _toolStripTaxpayerIDLabel;
+            set => _toolStripTaxpayerIDLabel = value;
+        }
+
+        public ToolStripComboBox ToolStripTaxpayerIDComboBox
+        {
+            get => _toolStripTaxpayerIDComboBox;
+            set => _toolStripTaxpayerIDComboBox = value;
+        }
 
         public ToolStripLabel ToolStripYearLabel
         {
@@ -46,6 +60,8 @@
 
         public void ListEntities()
         {
+            _toolStripTaxpayerIDLabel.Visible = false;
+            _toolStripTaxpayerIDComboBox.Visible = false;
             _toolStripYearLabel.Visible = false;
             _toolStripYearComboBox.Visible = false;
             _toolStripAmendmentNoLabel.Visible = false;

@@ -34,16 +34,18 @@
             editToolStripButton = new ToolStripButton();
             deleteToolStripButton = new ToolStripButton();
             printToolStripButton = new ToolStripButton();
+            tslblTaxpayerID = new ToolStripLabel();
+            tscboTaxpayerID = new ToolStripComboBox();
             tslblYear = new ToolStripLabel();
             tscboYear = new ToolStripComboBox();
+            tslblAmendmentNo = new ToolStripLabel();
+            tscboAmendmentNo = new ToolStripComboBox();
             menuStrip1 = new MenuStrip();
             usersToolStripMenuItem = new ToolStripMenuItem();
             rolesToolStripMenuItem = new ToolStripMenuItem();
             salesToolStripMenuItem = new ToolStripMenuItem();
             purchasesToolStripMenuItem = new ToolStripMenuItem();
             linkLabel1 = new LinkLabel();
-            tslblAmendmentNo = new ToolStripLabel();
-            tscboAmendmentNo = new ToolStripComboBox();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -51,10 +53,10 @@
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, editToolStripButton, deleteToolStripButton, printToolStripButton, tslblYear, tscboYear, tslblAmendmentNo, tscboAmendmentNo });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, editToolStripButton, deleteToolStripButton, printToolStripButton, tslblTaxpayerID, tscboTaxpayerID, tslblYear, tscboYear, tslblAmendmentNo, tscboAmendmentNo });
             toolStrip1.Location = new Point(0, 28);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1044, 28);
+            toolStrip1.Size = new Size(1185, 28);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -98,11 +100,25 @@
             printToolStripButton.Text = "&Print";
             printToolStripButton.Click += printToolStripButton_Click;
             // 
+            // tslblTaxpayerID
+            // 
+            tslblTaxpayerID.Name = "tslblTaxpayerID";
+            tslblTaxpayerID.Padding = new Padding(80, 0, 0, 0);
+            tslblTaxpayerID.Size = new Size(147, 25);
+            tslblTaxpayerID.Text = "Taxpayer";
+            tslblTaxpayerID.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // tscboTaxpayerID
+            // 
+            tscboTaxpayerID.Items.AddRange(new object[] { "ABC Corporation", "XYZ Company" });
+            tscboTaxpayerID.Name = "tscboTaxpayerID";
+            tscboTaxpayerID.Size = new Size(500, 28);
+            // 
             // tslblYear
             // 
             tslblYear.Name = "tslblYear";
-            tslblYear.Padding = new Padding(100, 0, 0, 0);
-            tslblYear.Size = new Size(137, 25);
+            tslblYear.Padding = new Padding(20, 0, 0, 0);
+            tslblYear.Size = new Size(57, 25);
             tslblYear.Text = "Year";
             tslblYear.TextAlign = ContentAlignment.MiddleRight;
             // 
@@ -113,13 +129,28 @@
             tscboYear.Name = "tscboYear";
             tscboYear.Size = new Size(80, 28);
             // 
+            // tslblAmendmentNo
+            // 
+            tslblAmendmentNo.Name = "tslblAmendmentNo";
+            tslblAmendmentNo.Padding = new Padding(20, 0, 0, 0);
+            tslblAmendmentNo.Size = new Size(135, 25);
+            tslblAmendmentNo.Text = "Amendment No";
+            tslblAmendmentNo.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // tscboAmendmentNo
+            // 
+            tscboAmendmentNo.DropDownStyle = ComboBoxStyle.DropDownList;
+            tscboAmendmentNo.Items.AddRange(new object[] { "2", "1", "0" });
+            tscboAmendmentNo.Name = "tscboAmendmentNo";
+            tscboAmendmentNo.Size = new Size(75, 28);
+            // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { usersToolStripMenuItem, rolesToolStripMenuItem, salesToolStripMenuItem, purchasesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1044, 28);
+            menuStrip1.Size = new Size(1185, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -166,26 +197,11 @@
             linkLabel1.UseCompatibleTextRendering = true;
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // tslblAmendmentNo
-            // 
-            tslblAmendmentNo.Name = "tslblAmendmentNo";
-            tslblAmendmentNo.Padding = new Padding(25, 0, 0, 0);
-            tslblAmendmentNo.Size = new Size(140, 25);
-            tslblAmendmentNo.Text = "Amendment No";
-            tslblAmendmentNo.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // tscboAmendmentNo
-            // 
-            tscboAmendmentNo.DropDownStyle = ComboBoxStyle.DropDownList;
-            tscboAmendmentNo.Items.AddRange(new object[] { "2", "1", "0" });
-            tscboAmendmentNo.Name = "tscboAmendmentNo";
-            tscboAmendmentNo.Size = new Size(80, 28);
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1044, 605);
+            ClientSize = new Size(1185, 605);
             Controls.Add(linkLabel1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
@@ -219,5 +235,7 @@
         private ToolStripComboBox tscboYear;
         private ToolStripLabel tslblAmendmentNo;
         private ToolStripComboBox tscboAmendmentNo;
+        private ToolStripLabel tslblTaxpayerID;
+        private ToolStripComboBox tscboTaxpayerID;
     }
 }
