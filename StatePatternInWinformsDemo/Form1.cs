@@ -15,15 +15,27 @@ namespace StatePatternDemo
         {
             InitializeComponent();
             tscboYear.SelectedIndex = 0;
+            tscboAmendmentNo.SelectedIndex = 0;
 
             _usersState.ToolStripYearLabel = this.tslblYear;
             _usersState.ToolStripYearComboBox = this.tscboYear;
+            _usersState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
+            _usersState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
+
             _rolesState.ToolStripYearLabel = this.tslblYear;
             _rolesState.ToolStripYearComboBox = this.tscboYear;
+            _rolesState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
+            _rolesState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
+
             _salesState.ToolStripYearLabel = this.tslblYear;
             _salesState.ToolStripYearComboBox = this.tscboYear;
+            _salesState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
+            _salesState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
+
             _purchasesState.ToolStripYearLabel = this.tslblYear;
             _purchasesState.ToolStripYearComboBox = this.tscboYear;
+            _purchasesState.ToolStripAmendmentNoLabel = this.tslblAmendmentNo;
+            _purchasesState.ToolStripAmendmentNoComboBox = this.tscboAmendmentNo;
 
             _currentUIState = _usersState;
             ListEntities();
@@ -86,10 +98,12 @@ namespace StatePatternDemo
             if (_currentUIState is SalesState)
             {
                 tscboYear.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboYear_SelectedIndexChanged;
+                tscboAmendmentNo.SelectedIndexChanged -= ((SalesState)_currentUIState).tscboAmendmentNo_SelectedIndexChanged;
             }
             else if (_currentUIState is PurchasesState)
             {
                 tscboYear.SelectedIndexChanged -= ((PurchasesState)_currentUIState).tscboYear_SelectedIndexChanged;
+                tscboAmendmentNo.SelectedIndexChanged -= ((PurchasesState)_currentUIState).tscboAmendmentNo_SelectedIndexChanged;
             }
         }
 

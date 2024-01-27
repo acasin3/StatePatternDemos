@@ -42,6 +42,8 @@
             salesToolStripMenuItem = new ToolStripMenuItem();
             purchasesToolStripMenuItem = new ToolStripMenuItem();
             linkLabel1 = new LinkLabel();
+            tslblAmendmentNo = new ToolStripLabel();
+            tscboAmendmentNo = new ToolStripComboBox();
             toolStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -49,7 +51,7 @@
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, editToolStripButton, deleteToolStripButton, printToolStripButton, tslblYear, tscboYear });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, editToolStripButton, deleteToolStripButton, printToolStripButton, tslblYear, tscboYear, tslblAmendmentNo, tscboAmendmentNo });
             toolStrip1.Location = new Point(0, 28);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1044, 28);
@@ -164,6 +166,21 @@
             linkLabel1.UseCompatibleTextRendering = true;
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // tslblAmendmentNo
+            // 
+            tslblAmendmentNo.Name = "tslblAmendmentNo";
+            tslblAmendmentNo.Padding = new Padding(25, 0, 0, 0);
+            tslblAmendmentNo.Size = new Size(140, 25);
+            tslblAmendmentNo.Text = "Amendment No";
+            tslblAmendmentNo.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // tscboAmendmentNo
+            // 
+            tscboAmendmentNo.DropDownStyle = ComboBoxStyle.DropDownList;
+            tscboAmendmentNo.Items.AddRange(new object[] { "2", "1", "0" });
+            tscboAmendmentNo.Name = "tscboAmendmentNo";
+            tscboAmendmentNo.Size = new Size(80, 28);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -200,5 +217,7 @@
         private LinkLabel linkLabel1;
         private ToolStripLabel tslblYear;
         private ToolStripComboBox tscboYear;
+        private ToolStripLabel tslblAmendmentNo;
+        private ToolStripComboBox tscboAmendmentNo;
     }
 }
